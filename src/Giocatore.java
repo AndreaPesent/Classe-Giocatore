@@ -1,24 +1,40 @@
 public class Giocatore
 {
-    private String Nome="";
-    private boolean Capitano;
-    private int Gol;
-    public void InfoGiocatore(String nome, boolean capitano, int gol)
+    private String nome;
+    private boolean capitano;
+    private int gol;
+    public void Giocatore(String Nome, boolean Capitano, int Gol)
     {
-        Nome=nome;
-        Capitano=capitano;
-        Gol=gol;
+       setNome(nome);
+       setCapitano(capitano);
+       setGol(gol);
     }
-    public String GetNome()
+    public String getNome()
     {
-        return Nome;
+        return nome;
     }
-    public boolean GetCapitano()
+    public boolean getCapitano()
     {
-        return Capitano;
+        return capitano;
     }
-    public int GetGol()
+    public int getGol()
     {
-        return Gol;
+        return gol;
+    }
+    public void setNome(String nome)
+    {
+        nome=nome;
+    }
+    public void setCapitano(boolean capitano)
+    {
+        capitano=capitano;
+    }
+    public void setGol(int gol)
+    {
+        gol=gol;
+        if (gol<0)
+        {
+            System.out.println("I gol non possono essere minori di 0");
+        }
     }
 }
