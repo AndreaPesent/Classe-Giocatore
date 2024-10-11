@@ -23,15 +23,15 @@ public class Giocatore
     }
     public void setNome(String nome)
     {
-        nome=nome;
+        this.nome=nome;
     }
     public void setCapitano(boolean capitano)
     {
-        capitano=capitano;
+        this.capitano=capitano;
     }
     public void setGol(int gol)
     {
-        gol=gol;
+        this.gol=gol;
         if (gol<0)
         {
             System.out.println("I gol non possono essere minori di 0");

@@ -26,35 +26,43 @@ public class Giocatore2
                     case 1:
                             System.out.println("Inserisci il nome del giocatore");
                             Nome=in.next();
-                            System.out.println("Il giocatore è capitano?");
-                            Capitano=in.next();
+                            System.out.println("Il giocatore è capitano? - true/false");
+                            ISCapitano=in.nextBoolean();
                             System.out.println("Inserisci il numero di gol del giocatore");
                             Gol=in.nextInt();
                             break;
+
                     case 2:
-                            for (int i=0;i<5;i++)
-                            {
-                                System.out.println(Lettura(giocatori));
-                            }
+                            System.out.println(Lettura(giocatori));
+                            break;
+
+                    case 3:
+
+                            System.out.println("Inserisci la satistica che vuoi cambiare");
+
                 }
             } while (scelta!=8);
     }
-    public static void Aggiungi(String Nome, String Capitano, int Gol, Giocatore [] giocatori)
+    public static void Aggiungi(String Nome, boolean ISCapitano, int Gol, Giocatore [] giocatori)
     {
         for (int i=0;i<5;i++)
         {
-            giocatori[i]=new Giocatore()
-            {
-            };
+            giocatori[i].setNome(Nome);
+            giocatori[i].setCapitano(ISCapitano);
+            giocatori[i].setGol(Gol);
         }
     }
-    public static String [] Lettura(Giocatore [] giocatori)
+    public static String Lettura(Giocatore [] giocatori)
     {
-        String [] Statistiche= new String[5];
+        String Statistiche="";
         for (int i=0;i<5;i++)
         {
-            Statistiche[i]=giocatori[i].getNome() + "," + giocatori[i].getCapitano() + "," + giocatori[i].getGol();
+           Statistiche+=giocatori[i].getNome() + ", " + giocatori[i].getCapitano() + ", " + giocatori[i].getGol() +"\n";
         }
         return Statistiche;
+    }
+    public static void Modifica(String Nome, int Gol, Giocatore[]giocatori, boolean ISCapitano)
+    {
+
     }
 }
