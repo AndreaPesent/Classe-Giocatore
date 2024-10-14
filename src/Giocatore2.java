@@ -37,15 +37,24 @@ public class Giocatore2
                             break;
 
                     case 3:
-
                             System.out.println("Inserisci la satistica che vuoi cambiare");
+                            break;
+
+                    case 5:
+                        System.out.println(NumeroGol(giocatori));
+                        break;
+
+                    case 6:
+                        System.out.println(NomeCapitano(giocatori));
+                        break;
+
 
                 }
             } while (scelta!=8);
     }
     public static void Aggiungi(String Nome, boolean ISCapitano, int Gol, Giocatore [] giocatori)
     {
-        for (int i=0;i<5;i++)
+        for (int i=0;i< giocatori.length;i++)
         {
             giocatori[i].setNome(Nome);
             giocatori[i].setCapitano(ISCapitano);
@@ -55,7 +64,7 @@ public class Giocatore2
     public static String Lettura(Giocatore [] giocatori)
     {
         String Statistiche="";
-        for (int i=0;i<5;i++)
+        for (int i=0;i< giocatori.length;i++)
         {
            Statistiche+=giocatori[i].getNome() + ", " + giocatori[i].getCapitano() + ", " + giocatori[i].getGol() +"\n";
         }
@@ -64,5 +73,33 @@ public class Giocatore2
     public static void Modifica(String Nome, int Gol, Giocatore[]giocatori, boolean ISCapitano)
     {
 
+    }
+    public static String NumeroGol (Giocatore[]giocatori)
+    {
+        int Ngol=0;
+        String NomeGiocatore="";
+        for (int i=0;i<giocatori.length;i++)
+        {
+            Ngol=giocatori[i].getGol();
+            if (Ngol>5)
+            {
+                NomeGiocatore=giocatori[i].getNome();
+            }
+        }
+        return NomeGiocatore;
+    }
+    public static String NomeCapitano(Giocatore[]giocatori)
+    {
+        String NomeCapitano="";
+        boolean IsCapitano;
+        for (int i=0;i<giocatori.length;i++)
+        {
+            IsCapitano=giocatori[i].getCapitano();
+            if (IsCapitano==true)
+            {
+                NomeCapitano=giocatori[i].getNome();
+            }
+        }
+        return NomeCapitano;
     }
 }
