@@ -9,6 +9,7 @@ public class Giocatore2
         boolean ISCapitano;
         String Capitano="";
         int Gol=0;
+        int Indice=0;
         Giocatore [] giocatori=new Giocatore[10];
         do
             {
@@ -40,13 +41,18 @@ public class Giocatore2
                             System.out.println("Inserisci la satistica che vuoi cambiare");
                             break;
 
+                    case 4:
+                            System.out.println("Inserisci la posizione in cui si trova il giocatore");
+                            Indice=in.nextInt();
+                            break;
+
                     case 5:
-                        System.out.println(NumeroGol(giocatori));
-                        break;
+                            System.out.println(NumeroGol(giocatori));
+                            break;
 
                     case 6:
-                        System.out.println(NomeCapitano(giocatori));
-                        break;
+                            System.out.println(NomeCapitano(giocatori));
+                            break;
 
 
                 }
@@ -73,6 +79,16 @@ public class Giocatore2
     public static void Modifica(String Nome, int Gol, Giocatore[]giocatori, boolean ISCapitano)
     {
 
+    }
+    public  static void CancellaGiocatore(Giocatore[]giocatori, int Indice)
+    {
+        for (int i=0;i< giocatori.length;i++)
+        {
+            if(i==Indice)
+            {
+                giocatori[i]=null;
+            }
+        }
     }
     public static String NumeroGol (Giocatore[]giocatori)
     {
